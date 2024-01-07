@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Realistic Eye</title>
+  <style>
+    /*Body*/
+    body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/*PreLoader*/
+
+
+/*Eye Container*/
+.eye-container {
+  position: absolute;
+  width: 120px;
+  height: 100px;
+  display: inline-flex;
+  justify-content:center;
+  text-align: center;
+  margin-top: -45px;
+  margin-right: 25%;
+  margin-bottom: 50px;
+  margin-left: -37px;
+}
+
+
+
+/*For Right Eye*/
+.eye-R {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  margin-right: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+/*For Right pupil*/
+.pupil-R {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  background-color: #000;
+  border-radius: 90%;
+  transform: translate(10%, 10%);
+  transition: transform 0.2s ease-in-out;
+}
+/*Right Eyebrow-R*/
+.eyebrow-R{
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #000;
+      margin-top: -5px;
+      border-radius: 0 0 70% 70%;
+      transform-origin: 50% 50%;
+      transform: rotate(15deg);
+      margin-left: -35px;
+      margin-bottom: 20px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+
+/*For Left Eye*/
+.eye-L {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  margin-left: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+/*For Left Pupil*/
+.pupil-L {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  background-color: #000;
+  border-radius: 90%;
+  transform: translate(10%, 10%);
+  transition: transform 0.2s ease-in-out;
+}
+/*Left EyeBrow*/
+.eyebrow-L{
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #000;
+      margin-top: -5px;
+      border-radius: 0 0 70% 70%;
+      transform-origin: 50% 50%;
+      transform: rotate(-15deg);
+      margin-left: 25px;
+      margin-bottom: 20px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+
+/*Nose Code*/
+.mirror-j {
+      transform: scaleX(-1);
+      /* display: inline-block; */
+      font-size: 24px;
+      margin-top: 15px;
+      margin-right: 15px;
+      margin-left: 15px;
+      margin-bottom: 15px;
+      width: 25px;
+      font-family: Arial, sans-serif; 
+      color: #333; 
+    }
+
+
+
+
+/*Smile Container*/
+.mouth {
+  position: absolute;
+  width: 20px;
+  height: 8px;
+  background-color: black;
+  border-radius: 0 0 550% 950%;
+  top: 48px; 
+  left: 50%;
+  transform: translateX(-50%) scaleY(0.7);
+  transition: transform 0.3s ease-in;
+  animation: smile 1s ease-in-out;
+}
+
+@keyframes smile {
+  0% { transform: translateX(-50%) scaleY(0.7); } /* Initial slight smile */
+  25% { transform: translateX(-50%) scaleY(1); }  /* Neutral expression */
+  50% { transform: translateX(-50%) scaleY(0.10); } /* half smile */
+  70% { transform: translateX(-50%) scaleY(0.30); } /* Full smile */
+  100% { transform: translateX(-50%) scaleY(1); } /* Final smile */
+}  
+/*End Code Smile container*/
+
+
+    
+   
+    /* #surface{
+      background-color:pink;
+      position: absolute;  
+      justify-content: center;
+      
+    } */
+
+    /* @keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+    /* #CircleBody {
+  position: absolute;
+  padding-bottom: 340px;
+  animation: rotateAnimation 3s linear infinite;
+} */
+
+/* .circle {
+  width: 100px;
+  height: 100px;
+  background-color:lightgray;
+  border-radius: 70%;
+  position: absolute;
+  top: 40%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+} */
+
+
+
+/*Face Code Start*/
+
+.face-L{
+      position: absolute;
+      width: 53px;
+      height: 5px;
+      background-color: #000;
+      margin-top: -70px;
+      border-radius: 0 0 70% 570%;
+      transform-origin: 50% 50%;
+      transform: rotate(-25deg);
+      margin-left: -30px;
+      margin-bottom: 50px;
+      transition: transform 0.2s ease-in-out;
+}
+
+.face-R {
+      position: absolute;
+      width: 51px;
+      height: 5px;
+      background-color: #000;
+      margin-top: -70px;
+      border-radius: 0 0 570% 70%;
+      transform-origin: 50% 50%;
+      transform: rotate(27deg);
+      margin-left: 10px;
+      margin-bottom: 50px;
+      transition: transform 0.2s ease-in-out;
+}
+.face-St {
+      position: absolute;
+      width: 90px;
+      height: 5px;
+      background-color: #000;
+      margin-top: -20px;
+      border-radius: 0 0 570% 70%;
+      transform-origin: 50% 50%;
+      transform: rotate(70deg);
+      margin-left: -54px;
+      margin-bottom: 50px;
+      transition: transform 0.2s ease-in-out;
+}
+.face-hair1 {
+      position: absolute;
+      width: 14px;
+      height: 2px;
+      background-color: #000;
+      margin-top: -67px;
+      border-radius: 0 0 180% 980%;
+      transform-origin: 50% 50%;
+      transform: rotate(50deg);
+      margin-left: -30px;
+      transition: transform 0.2s ease-in-out;
+}
+.face-hair2 {
+      position: absolute;
+      width: 15px;
+      height: 2px;
+      background-color: #000;
+      margin-top: -73px;
+      border-radius: 0 0 80% 990%;
+      transform-origin: 50% 50%;
+      transform: rotate(50deg);
+      margin-left: -25px;
+      transition: transform 0.2s ease-in-out;
+}
+.face-hair3 {
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #000;
+      margin-top: -77px;
+      border-radius: 0 0 180% 970%;
+      transform-origin: 50% 50%;
+      transform: rotate(50deg);
+      margin-left: -20px;
+      transition: transform 0.2s ease-in-out;
+}
+.face-hair4 {
+      position: absolute;
+      width: 22px;
+      height: 2px;
+      background-color: #000;
+      margin-top: -81px;
+      border-radius: 0 0 80% 980%;
+      transform-origin: 50% 50%;
+      transform: rotate(50deg);
+      margin-left: -16px;
+      transition: transform 0.2s ease-in-out;
+}
+
+.face-hair5 {
+      position: absolute;
+      width: 27px;
+      height: 3px;
+      background-color: #000;
+      margin-top: -87px;
+      border-radius: 0 0 180% 970%;
+      transform-origin: 50% 50%;
+      transform: rotate(50deg);
+      margin-left: -13px;
+      transition: transform 0.2s ease-in-out;
+}
+.face-hairTail-L{
+      position: absolute;
+      width: 22px;
+      height: 3px;
+      background-color: #000;
+      margin-top: -89px;
+      border-radius: 0 0 40% 340%;
+      transform-origin: 50% 50%;
+      transform: rotate(60deg);
+      margin-left: -2px;
+      transition: transform 0.2s ease-in-out;
+
+}
+.face-hairTail-R{
+      position: absolute;
+      width: 22px;
+      height: 3px;
+      background-color: #000;
+      margin-top: -90px;
+      border-radius: 0 0 340% 40%;
+      transform-origin: 50% 50%;
+      transform: rotate(-70deg);
+      margin-left: 9px;
+      transition: transform 0.2s ease-in-out;  
+}
+.face-hairTail-R1{
+      position: absolute;
+      width: 27px;
+      height: 3px;
+      background-color: #000;
+      margin-top: -90px;
+      border-radius: 0 0 340% 40%;
+      transform-origin: 50% 50%;
+      transform: rotate(-62deg);
+      margin-left: 16px;
+      transition: transform 0.2s ease-in-out;  
+}
+.face-hairTail-R2{
+      position: absolute;
+      width: 26px;
+      height: 3px;
+      background-color: #000;
+      margin-top: -85px;
+      border-radius: 0 0 340% 40%;
+      transform-origin: 50% 50%;
+      transform: rotate(-60deg);
+      margin-left: 22px;
+      transition: transform 0.2s ease-in-out;  
+}
+.face-hairTail-R3{
+      position: absolute;
+      width: 22px;
+      height: 3px;
+      background-color: #000;
+      margin-top: -80px;
+      border-radius: 0 0 340% 40%;
+      transform-origin: 50% 50%;
+      transform: rotate(-58deg);
+      margin-left: 30px;
+      transition: transform 0.2s ease-in-out;  
+}
+.face-hairTail-R4{
+      position: absolute;
+      width: 19px;
+      height: 3px;
+      background-color: #000;
+      margin-top: -75px;
+      border-radius: 0 0 340% 40%;
+      transform-origin: 50% 50%;
+      transform: rotate(-56deg);
+      margin-left: 38px;
+      transition: transform 0.2s ease-in-out;  
+}
+.face-hairTail-R5{
+      position: absolute;
+      width: 16px;
+      height: 3px;
+      background-color: #000;
+      margin-top: -69px;
+      border-radius: 0 0 340% 40%;
+      transform-origin: 50% 50%;
+      transform: rotate(-54deg);
+      margin-left: 43px;
+      transition: transform 0.2s ease-in-out;  
+}
+.face-hairTail-R6{
+      position: absolute;
+      width: 12px;
+      height: 3px;
+      background-color: #000;
+      margin-top: -66px;
+      border-radius: 0 0 340% 40%;
+      transform-origin: 50% 50%;
+      transform: rotate(-51deg);
+      margin-left: 50px;
+      transition: transform 0.2s ease-in-out;  
+}
+
+/*Animation Code*/
+
+#preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:wheat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
+  
+    #preloader.hidden {
+  opacity: 0;
+  pointer-events:none; 
+}
+
+    .spinner {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 0.8s linear infinite;
+      animation-duration: 1.5s; 
+    }
+   
+    @keyframes spin {
+  0% {
+    transform: scale(0.2);
+  }
+  25% {
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(0.2);
+  }
+  75% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+  </style>
+</head>
+<body>    
+  
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner">
+      <div id="FaceBody"> 
+            <div class="face-L"></div>
+            <div class="face-R"></div>
+            <div class="face-St"></div>
+            <div class="face-hair1"></div>
+            <div class="face-hair2"></div>
+            <div class="face-hair3"></div>
+            <div class="face-hair4"></div>
+            <div class="face-hair5"></div>
+            <div class="face-hairTail-L"></div>
+            <div class="face-hairTail-R"></div>
+            <div class="face-hairTail-R1"></div>
+            <div class="face-hairTail-R2"></div>
+            <div class="face-hairTail-R3"></div>
+            <div class="face-hairTail-R4"></div>
+            <div class="face-hairTail-R5"></div>
+            <div class="face-hairTail-R6"></div>
+            
+  <div class="eye-container" id="surface">
+    <div class="eye-L">
+      <div class="pupil-L"></div>
+    </div>
+    <div class="eyebrow-L"></div>
+
+    <div class="eye-R">
+      <div class="pupil-R"></div>
+    </div>
+    <div class="eyebrow-R"></div>
+    <div class="mirror-j">J</div>
+    <div class="mouth"></div>
+  </div>
+    </div>
+    </div>
+  </div>
+  <script>
+   document.addEventListener("mousemove", function (event) {
+  const eyeL = document.querySelector(".eye-L");
+  const eyeRect = eyeL.getBoundingClientRect();
+
+  // Calculate the position of the mouse relative to the eye
+  const mouseX = event.clientX - eyeRect.left;
+  const mouseY = event.clientY - eyeRect.top;
+
+  // Calculate the angle of the mouse position relative to the center of the eye
+  const angle = Math.atan2(mouseY - eyeRect.height / 2, mouseX - eyeRect.width / 2);
+
+  // Calculate the maximum displacement for the pupil
+  const maxDisplacement = Math.min(eyeRect.width / 4, eyeRect.height / 4);
+
+  // Calculate the position of the pupil
+  const pupilX = Math.cos(angle) * maxDisplacement;
+  const pupilY = Math.sin(angle) * maxDisplacement;
+
+  // Apply the transformation to the pupil
+  const pupil = document.querySelector(".pupil-L");
+  pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+});
+
+
+//For RightEye
+document.addEventListener("mousemove", function (e) {
+  const eyeR = document.querySelector(".eye-R");
+  const eyeRRect = eyeR.getBoundingClientRect();
+ 
+  // Calculate the position of the mouse relative to the eye
+  const mouseX = e.clientX - eyeRRect.left;
+  const mouseY = e.clientY - eyeRRect.top;
+
+  // Calculate the angle of the mouse position relative to the center of the eye
+  const angle = Math.atan2(mouseY - eyeRRect.height / 2, mouseX - eyeRRect.width / 2);
+
+  // Calculate the maximum displacement for the pupil
+  const maxDisplacement = Math.min(eyeRRect.width / 4, eyeRRect.height / 4);
+
+  // Calculate the position of the pupil
+  const pupilX = Math.cos(angle) * maxDisplacement;
+  const pupilY = Math.sin(angle) * maxDisplacement;
+
+  // Apply the transformation to the pupil
+  const pupil = document.querySelector(".pupil-R"); // Corrected selector
+  pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+});
+
+ 
+/*For Simile Face*/
+
+document.addEventListener("DOMContentLoaded", function () {
+      const smileMouth = document.getElementById("smile-mouth");
+
+      document.getElementById("smiley-face").addEventListener("click", function () {
+        // Toggle the mouth between a smile and a neutral expression
+        smileMouth.style.transform = smileMouth.style.transform === "scaleY(0.9)" ? "scaleY(1)" : "scaleY(0.5)";
+      });
+    });
+
+
+
+    /*Pre Loader timer*/
+    
+
+     //Simulate loading completion
+     document.addEventListener("DOMContentLoaded", function () {
+      // Simulate a delay for demonstration purposes
+      setTimeout(function () {
+        // Remove the preloader
+        document.getElementById("preloader").style.display = "none";
+        // Allow scrolling after preloading
+        document.body.style.overflow = "auto";
+      }, 2000); // Adjust the timeout duration as needed
+    });
+
+  </script>  
+</body>
+</html>
